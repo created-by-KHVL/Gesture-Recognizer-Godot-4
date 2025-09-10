@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://b0oua5jkcmjys"]
+
+[ext_resource type="Script" uid="uid://cweypsyxvltcu" path="res://Scripts/draw_gesture.gd" id="1_joogo"]
+
+[node name="Main_scene" type="Node2D"]
+
+[node name="Draw_gesture" type="Node" parent="."]
+script = ExtResource("1_joogo")

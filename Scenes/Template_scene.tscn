@@ -1,0 +1,63 @@
+[gd_scene load_steps=2 format=3 uid="uid://c8afg1a6cglrn"]
+
+[ext_resource type="Script" uid="uid://dp5haqrof54pl" path="res://Scripts/gesture_template.gd" id="1_gg7b2"]
+
+[node name="Set_template" type="Node2D"]
+
+[node name="Template" type="Node" parent="." node_paths=PackedStringArray("template_name_line_edit", "draw_status_label")]
+script = ExtResource("1_gg7b2")
+template_name_line_edit = NodePath("Control/Panel/VBoxContainer/Template_name_LineEdit")
+draw_status_label = NodePath("Control/Panel/VBoxContainer/Draw_status_label")
+
+[node name="Control" type="Control" parent="Template"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="Template/Control"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -352.0
+offset_top = 32.0
+offset_right = -32.0
+offset_bottom = 252.0
+grow_horizontal = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Template/Control/Panel"]
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Line_edit_label" type="Label" parent="Template/Control/Panel/VBoxContainer"]
+layout_mode = 2
+text = "Print name of template and press Enter"
+
+[node name="Template_name_LineEdit" type="LineEdit" parent="Template/Control/Panel/VBoxContainer"]
+layout_mode = 2
+
+[node name="Draw_button" type="Button" parent="Template/Control/Panel/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+text = "Press here to draw"
+
+[node name="Save_template_button" type="Button" parent="Template/Control/Panel/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+text = "Press here to save template"
+
+[node name="Draw_status_label" type="Label" parent="Template/Control/Panel/VBoxContainer"]
+layout_mode = 2
+text = "Cant't draw, press draw button"
+
+[connection signal="text_submitted" from="Template/Control/Panel/VBoxContainer/Template_name_LineEdit" to="Template" method="_on_line_edit_text_submitted"]
+[connection signal="pressed" from="Template/Control/Panel/VBoxContainer/Draw_button" to="Template" method="draw_button_pressed"]
+[connection signal="pressed" from="Template/Control/Panel/VBoxContainer/Save_template_button" to="Template" method="save_template_button_pressed"]
