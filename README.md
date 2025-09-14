@@ -20,5 +20,5 @@ Here you can name the gesture, draw it( press D or click on ui button), and save
 
 Video instruction:
 
-https://github.com/user-attachments/assets/22951cdc-4c57-4eda-b412-a3d630e2f493
+https://youtu.be/RZ_KKpVxGBw?si=B_N9GgFOCj2PeCtU
 
